@@ -8,7 +8,7 @@ const swaggerDocument = YAML.load('./tmp.yaml');
 
 app.use('/swagger-ui/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-let PORT = 8081;
+const PORT = process.env.PORT || 8081;
 
 // Init Middleware
 app.use(express.json({extended:false}));
